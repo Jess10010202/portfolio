@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>honggildong — UX/UI Designer</title>
+    <meta name="description" content="honggildong — UX/UI designer portfolio." />
+    <meta name="author" content="honggildong" />
+
+    <meta property="og:title" content="honggildong — UX/UI Designer" />
+    <meta property="og:description" content="honggildong — UX/UI designer portfolio." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/images/og-image.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="honggildong — UX/UI Designer" />
+    <meta
+      name="twitter:description"
+      content="honggildong — UX/UI designer portfolio."
+    />
+    <meta name="twitter:image" content="assets/images/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css?v=20260410" />
+    <script src="js/main.js?v=20260410" defer></script>
+
+    <!-- Amplitude -->
+    <script src="https://cdn.amplitude.com/script/1c5ca27560c9afab7ae6924a81fe93e2.js"></script>
+    <script>
+      window.amplitude.add(window.sessionReplay.plugin({ sampleRate: 1 }));
+      window.amplitude.init("1c5ca27560c9afab7ae6924a81fe93e2", {
+        fetchRemoteConfig: true,
+        sessionReplay: {
+          maskAllText: false,
+        },
+        autocapture: {
+          attribution: true,
+          fileDownloads: true,
+          formInteractions: false,
+          pageViews: false,
+          sessions: true,
+          elementInteractions: false,
+          networkTracking: true,
+          webVitals: true,
+          frustrationInteractions: {
+            thrashedCursor: true,
+            errorClicks: true,
+            deadClicks: true,
+            rageClicks: true,
+          },
+        },
+      });
+    </script>
+    <script>
+      amplitude.track("page_view");
+
+      let scrollTracked = false;
+      window.addEventListener("scroll", () => {
+        if (!scrollTracked) {
+          const scrollPercent =
+            ((window.scrollY + window.innerHeight) / document.body.scrollHeight) * 100;
+          if (scrollPercent >= 50) {
+            amplitude.track("scroll", { percent: 50 });
+            scrollTracked = true;
+          }
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const ctaBtn = document.querySelector("#ctaBtn");
+        if (ctaBtn) {
+          ctaBtn.addEventListener("click", () => {
+            amplitude.track("cta_click", {
+              button_name: "start_now",
+              section: "hero",
+            });
+          });
+        }
+
+        const form = document.querySelector("#form");
+        if (form) {
+          form.addEventListener("submit", () => {
+            amplitude.track("form_submit");
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner"></header>
+
+    <main id="main" class="site-main" role="main">
+      <section id="work" class="section section--work" aria-label="Work">
+        <div class="container">
+          <header class="section-head work-head">
+            <p class="section-head__label">Work</p>
+            <h2 class="section-head__title">포트폴리오</h2>
+          </header>
+
+          <div class="work-filters" aria-label="Project category filters">
+            <button class="work-filters__link" type="button" data-work-filter="all" aria-pressed="true">All</button>
+            <button class="work-filters__link" type="button" data-work-filter="detail" aria-pressed="false">Detail Page</button>
+            <button class="work-filters__link" type="button" data-work-filter="content" aria-pressed="false">SNS</button>
+            <button class="work-filters__link" type="button" data-work-filter="web" aria-pressed="false">Web</button>
+            <button class="work-filters__link" type="button" data-work-filter="mobile" aria-pressed="false">App</button>
+            <button class="work-filters__link" type="button" data-work-filter="branding" aria-pressed="false">Branding</button>
+          </div>
+
+          <div class="work-grid" aria-label="Portfolio projects grid">
+            <a
+              class="project-card project-card--detail project-card--content"
+              href="project-detail-1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="새 탭에서 프로젝트 열기: 제품 상세 페이지"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Detail Page</p>
+                <h3 class="project-card__title">제품 상세 페이지</h3>
+                <p class="project-card__desc">
+                  Better information density with stronger action cues.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--detail project-card--content"
+              href="project-detail-2.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: Service Detail Experience"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Detail Page</p>
+                <h3 class="project-card__title">Service Detail Experience</h3>
+                <p class="project-card__desc">
+                  Reduced friction from intent to inquiry.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--web"
+              href="project-web-1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: Landing Page System"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Web Design</p>
+                <h3 class="project-card__title">Landing Page System</h3>
+                <p class="project-card__desc">
+                  Modular sections built for campaigns and quick iteration.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--web"
+              href="project-web-2.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: Website UX Refresh"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Web Design</p>
+                <h3 class="project-card__title">Website UX Refresh</h3>
+                <p class="project-card__desc">
+                  Clearer navigation and improved content hierarchy.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--mobile"
+              href="project-mobile-1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: Mobile App Redesign"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Mobile App Design</p>
+                <h3 class="project-card__title">Mobile App Redesign</h3>
+                <p class="project-card__desc">
+                  Cleaner onboarding and improved first-time retention.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--mobile"
+              href="project-mobile-2.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: E-commerce Mobile Flow"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Mobile App Design</p>
+                <h3 class="project-card__title">E-commerce Mobile Flow</h3>
+                <p class="project-card__desc">
+                  Faster product discovery with a conversion-focused cart.
+                </p>
+              </div>
+            </a>
+
+            <a
+              class="project-card project-card--branding"
+              href="project-branding-1.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open project in new tab: Visual Identity Concepts"
+            >
+              <div class="project-card__thumb" aria-hidden="true"></div>
+              <div class="project-card__body">
+                <p class="project-card__category">Branding</p>
+                <h3 class="project-card__title">Visual Identity Concepts</h3>
+                <p class="project-card__desc">
+                  Minimal brand system with UI-ready components.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="section section--about" aria-label="About">
+        <div class="container">
+          <header class="section-head">
+            <p class="section-head__label">About</p>
+            <h2 class="section-head__title">디자이너 '홍길동'</h2>
+          </header>
+
+          <div class="about">
+            <div class="about__profile" aria-label="Profile photo">
+              <img
+                src="assets/images/profile-photo.jpg"
+                alt="Profile photo"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="about__bio">
+              <div class="about__skills" aria-label="Skills">
+                <ul class="tag-list">
+                  <li class="tag">Detail Page</li>
+                  <li class="tag">SNS</li>
+                  <li class="tag">Web</li>
+                  <li class="tag">App</li>
+                  <li class="tag">Branding</li>
+                </ul>
+              </div>
+
+              <p>
+                공무에 상체다 국회는 하는 두다. 알아낸 손님을 양파만 믿으면, 생산에서
+                관하다 불로의 배경이 조정한다. 국회의원은 남부가 해결한지 눕던
+                의거하라고, 패턴화되어야, 있은 받아들이다. 기타에서 다가오게 사이가
+                이 없은 관점의 따르기 하다.
+              </p>
+
+              <h3>학력</h3>
+              <ul>
+                <li>2026.04 ~ 08 / 서울시남부여성발전센터 ㅇㅇ 과정 이수</li>
+                <li>2021.03 ~ 2025.02 / 한국 대학교 ㅇㅇ학과</li>
+              </ul>
+
+              <h3>경력</h3>
+              <ul>
+                <li>2025.03 ~ 2025.12 / ㅇㅇ사 마케팅 팀 / 광고소재 제작</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="section section--contact" aria-label="Contact">
+        <div class="container">
+          <div class="contact">
+            <header class="contact__head">
+              <h3 class="contact__title">Contact</h3>
+              <p>honggildong@gmail.com 　/　 010-1234-5678</p>
+            </header>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo"></footer>
+  </body>
+</html>
