@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="ko">
-  <head>
+  <head><!-- Amplitude -->
+    <script src="https://cdn.amplitude.com/libs/amplitude-8.17.0-min.gz.js"></script>
+    <script>
+      amplitude.getInstance().init("13c061670b631396f949dbd02d1a0a8b");
+    
+      // 페이지 방문
+      amplitude.getInstance().logEvent("page_view");
+    
+      // 버튼 클릭
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.querySelector("#ctaBtn");
+        if (btn) {
+          btn.addEventListener("click", () => {
+            amplitude.getInstance().logEvent("cta_click");
+          });
+        }
+      });
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>honggildong — UX/UI Designer</title>
